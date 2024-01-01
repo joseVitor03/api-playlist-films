@@ -13,10 +13,27 @@ module.exports = {
      * }], {});
     */
    await queryInterface.bulkInsert('directors', [
-    { name: 'John Lasseter' },
+    { name: 'Hayao Miyazaki' },
+    { name: 'Rob Minkoff' },
+    { name: 'Roger Allers' },
+    { name: 'Isao Takahata' },
     { name: 'Andrew Stanton' },
     { name: 'Pete Docter' },
-    { name: 'Kemp Powers'}
+    { name: 'John Lasseter' },
+    { name: 'Lee Unkrich' },
+    { name: 'Chris Sanders (II)' },
+    { name: 'Dean DeBlois' },
+    { name: 'Tomm Moore' },
+    { name: 'Adam Elliot' },
+    { name: 'Byron Howard' },
+    { name: 'Rich Moore' },
+    { name: 'Katsuhiro Ōtomo' },
+    { name: 'Henry Selick' },
+    { name: 'Gary Trousdale' },
+    { name: 'Kirk Wise' },
+    { name: 'Brad Bird' },
+    { name: 'John Musker' },
+    { name: 'Ron Clements' }
    ])
   },
 

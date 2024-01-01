@@ -30,7 +30,7 @@ const FilmsDirectors = (sequelize, Datatypes) => {
 
   filmsDirectors.associate = (models) => {
     models.Film.belongsToMany(models.Director, {
-      as: 'director',
+      as: 'directors',
       through: filmsDirectors,
       foreignKey: 'filmId',
       otherKey: 'directorId'

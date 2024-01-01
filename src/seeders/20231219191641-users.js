@@ -13,8 +13,7 @@ module.exports = {
      * }], {});
     */
    await queryInterface.bulkInsert('users', [
-    { name: 'Jose Vitor de Souza', email: 'jv681033@gmail.com', password: '1111111' },
-    { name: 'Jose Vitor de Souza', email: 'jv681034@gmail.com', password: '1111111' }
+    { name: 'Jose Vitor de Souza', email: 'jv681033@gmail.com', password: '98227449' },
    ])
   },
 

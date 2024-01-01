@@ -3,7 +3,7 @@ const { Film, Director, UserFilm } = require('../models')
 const findAll = async () => {
   const response = await Film.findAll({
     include: [
-      { model: Director, as: 'director', through: { attributes: [] } },
+      { model: Director, as: 'directors', through: { attributes: [] } },
     ],
   });
   if (response) {

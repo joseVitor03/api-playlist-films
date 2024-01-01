@@ -4,13 +4,24 @@ const { createToken } = require('../utils/createToken');
 const findUserForLogin = async ({ email, password }) => {
   const response = await User.findOne({ where: { email, password } });
   if (!response) {
-    return { status: 404, data: { message: 'Email não encontrado.' } };
+    return { status: 404, data: { message: 'Email ou senha incorretos.' } };
   }
 
   const token = createToken(response.email);
   return { status: 201, data: { token, userId: response.id } };
 };
 
+const insertUser = async ({ name, email, password }) => {
+  const response = await User.findOne({ where: { email }});
+  if (response === null) {
+    await User.create({ name, email, password });
+    const token = createToken(response.email);
+    return { status: 201, data: { token, userId: response.id } };
+  }
+  return { status: 409, data: { message: 'email já cadastrado.'} };
+}
+
 module.exports = {
-  findUserForLogin
+  findUserForLogin,
+  insertUser
 };

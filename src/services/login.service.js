@@ -14,9 +14,9 @@ const findUserForLogin = async ({ email, password }) => {
 const insertUser = async ({ name, email, password }) => {
   const response = await User.findOne({ where: { email }});
   if (response === null) {
-    await User.create({ name, email, password });
-    const token = createToken(response.email);
-    return { status: 201, data: { token, userId: response.id } };
+    const user = await User.create({ name, email, password });
+    const token = createToken(email);
+    return { status: 201, data: { token, userId: user.id } };
   }
   return { status: 409, data: { message: 'email já cadastrado.'} };
 }
